@@ -11,6 +11,15 @@ export default {
         // text: 'NEW'
       }
     },
+    {
+      name: 'Roles',
+      url: url + 'roles',
+      icon: 'fas fa-key',
+      badge: {
+        variant: 'primary',
+        // text: 'NEW'
+      }
+    },
     // {
     //   name: 'Url Shortner',
     //   url: url + 'url-shortner',

@@ -9,6 +9,9 @@
       </b-nav-item-dropdown>
 </template>
 <style>
+  .yenkii-dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #ececec;
+  }
   .yenkii-dropdown-menu .dropdown-menu {
     top: 39px !important;
     background-color: #fdfdfd !important;

@@ -63,6 +63,25 @@ const routes = [
         }
     },
     { 
+        path: admin_url + 'roles', 
+        component: require('./components/Admin/Role/Index'),
+        meta: {
+            layout: 'admin',
+            breadcrumb: [
+                {
+                    name: 'Home',
+                    path: admin_url, 
+                },
+                {
+                    name: 'Roles',
+                    path: admin_url + 'roles', 
+                }
+            ],
+            middlewareAuth: true,
+            roleId: 1
+        },
+    },
+    { 
         path: admin_url +'change-password', 
         component: require('./components/Admin/Auth/ChangePassword'),
         name: 'admin-change-password',
