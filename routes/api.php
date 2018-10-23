@@ -26,7 +26,9 @@ Route::get('/test', function() {
 
 // shorten url function in front page by user.
 
+Route::post('admin/change-password', 'AdminController@changePassword');
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth:api', 'admin']], function () {
+
 
     // Role functions.
     Route::get('roles', 'RoleController@index');

@@ -55,9 +55,10 @@ class LoginController extends Controller
     {
         $email = request('email');
         $password = request('password');
+        $remember_me = request('remember_me');
 
         // Check if a user with the specified email exists
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember_me)) {
             // Send an internal API request to get an access token
             $client = DB::table('oauth_clients')->where('id', 2)->first();
             $data = [

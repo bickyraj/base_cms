@@ -20,7 +20,7 @@
       <b-nav-item class="d-md-down-none">
         <i class="icon-location-pin"></i>
       </b-nav-item>
-      <HeaderDropdown :companyName="companyName"/>
+      <HeaderDropdown :companyName="companyName" :companyLogo="companyLogo"/>
     </b-navbar-nav>
   </header>
 </template>
@@ -29,7 +29,7 @@ import HeaderDropdown from './HeaderDropdown.vue'
 
 export default {
   name: 'c-header',
-  props: ['companyName'],
+  props: ['companyName', 'companyLogo'],
   components: {
     HeaderDropdown
   },

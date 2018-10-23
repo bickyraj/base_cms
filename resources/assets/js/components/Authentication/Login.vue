@@ -22,24 +22,30 @@
                 	    <div class="form-actions">
                 	        <button type="submit" class="btn btn-block btn-submit uppercase">Login</button>
                 	    </div>
-                	    <div class="form-actions">
-                	        <div class="pull-left">
-                	        	<div>
-        	        	        	<input type="checkbox" id="cbx" class="inp-cbx" style="display: none">
-        	        	        	<label for="cbx" class="cbx">
-        								<span>
-        									<svg width="12px" height="10px" viewBox="0 0 12 10">
-        										<polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-        									</svg>
-        								</span>
-        								<span> Remember me</span>
-        	        	        	</label>
-                	        	</div>
-                	        </div>
-                	        <!-- <div class="pull-right forget-password-block">
-                	            <a href="" id="forget-password" class="forget-password">Forgot Password?</a>
-                	        </div> -->
-                	    </div>
+                        <b-form-checkbox id="checkbox1"
+                             v-model="remember_me"
+                             value="1"
+                             unchecked-value="0">
+                                 Remember me
+                        </b-form-checkbox>
+                	    <!-- <div class="form-actions">
+                            <div class="pull-left">
+                                <div>
+                                                            <input type="checkbox" id="cbx" ref="remember_me" name="remember_me" class="inp-cbx" style="display: none">
+                                                            <label for="cbx" class="cbx">
+                                                                <span>
+                                                                    <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <span> Remember me</span>
+                                                            </label>
+                                </div>
+                            </div>
+                            <div class="pull-right forget-password-block">
+                                <a href="" id="forget-password" class="forget-password">Forgot Password?</a>
+                            </div>
+                        </div> -->
                 	    <!-- <div class="app-logo-container" style="display: inline-block;">
         		        	<img class="app-logo" style="width: 146px; margin-right: 2px;" :src="appstore" alt="logo">
         		        	<img class="app-logo" :src="applestore" alt="logo">
@@ -77,6 +83,7 @@ export default {
         return {
             email: "",
             password: "" ,
+            remember_me: "",
             logo: this.$root.baseUrl + '/public/img/logo.png',
             loginBg: this.$root.baseUrl + '/public/img/login-bg.jpg',
             appstore: this.$root.baseUrl + '/public/img/appstore.png',
@@ -90,7 +97,8 @@ export default {
         		if (result) {
 		            let data = {
 		                email: this.email,
-		                password: this.password
+                        password: this.password,
+                        remember_me: this.remember_me,
 		            };
 
 		            axios.post('./api/login', data)

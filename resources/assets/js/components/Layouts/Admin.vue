@@ -1,6 +1,6 @@
 <template>
   <div class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
-    <AppHeader :companyName="'Admin'"/>
+    <AppHeader :companyName="'Admin'" :companyLogo="company_logo"/>
     <div class="app-body">
       <Sidebar :navItems="nav" />
       <main class="main">
@@ -25,6 +25,7 @@
     name: 'app',
     data() {
       return {
+        company_logo: this.$root.defaultImageUrl,
         nav: nav.items,
         authenticated: auth.check(),
         user: auth.user

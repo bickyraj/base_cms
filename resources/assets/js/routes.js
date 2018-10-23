@@ -63,6 +63,25 @@ const routes = [
         }
     },
     { 
+        path: admin_url +'change-password', 
+        component: require('./components/Admin/Auth/ChangePassword'),
+        name: 'admin-change-password',
+        meta: {
+            layout: 'admin',
+            breadcrumb: [
+                {
+                    name: 'Home',
+                    path: admin_url, 
+                },
+                {
+                    name: 'Change Password',
+                }
+            ],
+            middlewareAuth: true,
+            roleId: 1
+        },
+    },
+    { 
         path: admin_url + 'url-shortner', 
         component: require('./components/Admin/UrlShortner/Index'),
         meta: {
