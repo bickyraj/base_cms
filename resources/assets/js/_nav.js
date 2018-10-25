@@ -20,6 +20,15 @@ export default {
         // text: 'NEW'
       }
     },
+    {
+      name: 'Import / Export',
+      url: url + 'import-export',
+      icon: 'fas fa-cloud-download-alt',
+      badge: {
+        variant: 'primary',
+        // text: 'NEW'
+      }
+    },
     // {
     //   name: 'Url Shortner',
     //   url: url + 'url-shortner',

@@ -82,6 +82,25 @@ const routes = [
         },
     },
     { 
+        path: admin_url + 'import-export', 
+        component: require('./components/Admin/ImportExport/Index'),
+        meta: {
+            layout: 'admin',
+            breadcrumb: [
+                {
+                    name: 'Home',
+                    path: admin_url, 
+                },
+                {
+                    name: 'Import / Export',
+                    path: admin_url + 'import-export', 
+                }
+            ],
+            middlewareAuth: true,
+            roleId: 1
+        },
+    },
+    { 
         path: admin_url +'change-password', 
         component: require('./components/Admin/Auth/ChangePassword'),
         name: 'admin-change-password',

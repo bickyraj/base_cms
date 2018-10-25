@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Role;
+use PDF;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Role as RoleResource;
 
@@ -86,5 +87,12 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         //
+    }
+
+    public function invoicePdf()
+    {
+        $data = [];
+        $pdf = PDF::loadView('invoice.index', $data);
+        return $pdf->download('invoice.pdf');
     }
 }

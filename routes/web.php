@@ -24,6 +24,9 @@ Route::get('/login', function () {
 	return view('layouts.app');
 });
 
+Route::get('admin/export-table/{type}', 'Admin\UserController@exportTable');
+Route::get('invoice', 'RoleController@invoicePdf');
+
 Route::get('sendNotification', function () {
     // this fires the event
     event(new App\Events\TestNotification());

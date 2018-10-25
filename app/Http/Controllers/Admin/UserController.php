@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UsersExport;
+use Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -162,5 +164,10 @@ class UserController extends Controller
     public function getUser()
     {
         return auth()->user();
+    }
+
+    public function exportTable($type)
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }
