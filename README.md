@@ -6,7 +6,7 @@ This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 <ul>
 	<li>PHP 7 or greater</li>
 	<li>Laravel 5.5 or newer</li>
-	<li>mySql mariaDB</li>
+	<li>mySql mariaDB or Postgres</li>
 	<li>Redis not required</li>
 </ul>
 
