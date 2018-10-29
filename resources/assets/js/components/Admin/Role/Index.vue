@@ -105,7 +105,8 @@
     methods: {
       info(item, index, button) {
         let self = this;
-        axios.get('../api/admin/role/' + item.id).then(function(response) {
+        let url = self.$root.baseUrl + '/api/admin/role/';
+        axios.get(url + item.id).then(function(response) {
             if (response.status === 200 || response.status === 201) {
               self.modalInfo.row = index
               self.modalInfo.title = `Edit Role`
@@ -127,7 +128,8 @@
         var form = self.$refs.editRoleForm;
         var row_index = form.getAttribute('row');
         var formData = new FormData(form);
-        axios.post('../api/admin/edit-role', formData).then(function(response) {
+        let url = self.$root.baseUrl + '/api/admin/edit-role';
+        axios.post(url, formData).then(function(response) {
             if (response.status === 200) {
               var role = response.data.data;
               self.table_items[row_index].name = role.name;
@@ -158,7 +160,8 @@
           confirmButtonText: 'Yes',
         }).then((result) => {
           if (result.value) {
-            axios.delete('../api/admin/role/' + item.id).then(function(response) {
+            let url = self.$root.baseUrl + '/api/admin/role/';
+            axios.delete(url + item.id).then(function(response) {
                 if (response.status === 200) {
                   self.table_items.splice(row, 1);
                   self.$swal({
@@ -184,7 +187,8 @@
         var formData = new FormData(form);
         var des = this.getAddRoleContent;
         formData.append('description', des);
-        axios.post('../api/admin/role', formData).then(function(response) {
+        let url = self.$root.baseUrl + '/api/admin/role';
+        axios.post(url, formData).then(function(response) {
             if (response.status === 201) {
               var role = response.data.data;
               var role_data = {
@@ -197,12 +201,17 @@
               self.$toastr.s("A role has been added.");
             }
           })
-          .catch(function(error) {});
+          .catch(function(error) {
+            if (error.response.status === 422) {
+              self.$toastr.e(error.response.data.errors.name);
+            }
+          });
       },
-      fetchRoles(role_url) {
+      fetchRoles() {
         let vm = this;
-        role_url = role_url || '../api/admin/roles'
-        axios.get(role_url)
+        let self = this;
+        let url = self.$root.baseUrl + '/api/admin/roles';
+        axios.get(url)
           .then(function(response) {
             var role_itmes = response.data.data;
             vm.table_items = role_itmes.map(obj => {
