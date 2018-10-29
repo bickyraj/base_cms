@@ -1,6 +1,16 @@
 # Base CRM
 This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 
+## Features
+<ul>
+	<li>Landing Page</li>
+	<li>Login Page</li>
+	<li>Role system</li>
+	<li>Simple Export to Excel</li>
+</ul>
+
+	
+
 ## Requirements
 
 <ul>
