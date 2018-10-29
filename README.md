@@ -10,13 +10,14 @@ This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 	<li>Redis not required</li>
 </ul>
 
-#setup process
+## Setup process
 
-git clone https://github.com/bickyraj/base_crm.git
+	git clone https://github.com/bickyraj/base_crm.git
 
-composer update, this would load all the necessary vendor files.
+	composer update
+this would load all the necessary vendor files.
 
-create a database on postgres named laravel_base_crm
+create a database named laravel_base_crm
 
 Also create a database on postgres name testing_base_crm
 
@@ -29,10 +30,11 @@ In the .env file enter the database name, username and password of your postgres
 DB_DATABASE=laravel_base_crm
 DB_USERNAME=
 DB_PASSWORD=
+
 In the cmd prompt run the following command sequentially
- php artisan migrate
- php artisan passport:install
- php artisan db:seed
- php artisan migrate --database=testing
+	php artisan migrate
+	php artisan passport:install
+	php artisan db:seed
+	php artisan migrate --database=testing
 
 now go to browser and enter your url, the project is ready.
