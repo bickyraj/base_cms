@@ -1,5 +1,5 @@
-# Base CRM
-This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
+# Base CMS
+This is a base cms setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 
 ## Features
 <ul>
@@ -28,15 +28,15 @@ This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 
 <ul>
 <li>this would load all the necessary vendor files.</li>
-<li>create a database named laravel_base_crm</li>
+<li>create a database named laravel_base_cms</li>
 <li>Also create a database named testing_base_crm</li>
-<li>open .env file  and edit the env variables, Default name of project folder is base_crm</li>
+<li>open .env file  and edit the env variables, Default name of project folder is base_cms</li>
 
 	BASE_URL=localhost/YOUR_PROJECT_FOLDER_NAME/
 	VUE_BASE_URL = /YOUR_PROJECT_FOLDER_NAME/
 <li>In the .env file enter the database name, username and password of your database in</li>
 
-	DB_DATABASE=laravel_base_crm
+	DB_DATABASE=laravel_base_cms
 	DB_USERNAME=
 	DB_PASSWORD=
 
