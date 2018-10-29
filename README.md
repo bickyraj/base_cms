@@ -19,10 +19,11 @@ This is a base crm setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 <ul>
 	<li>this would load all the necessary vendor files.</li>
 	<li>create a database named laravel_base_crm</li>
-	<li>Also create a database on postgres name testing_base_crm</li>
-	<li>open .env file  and edit the env variables, Default name of project folder is base_crm</li>
+	<li>Also create a database named testing_base_crm</li>
 </ul>
-	
+
+open .env file  and edit the env variables, Default name of project folder is base_crm
+
 	BASE_URL=localhost/YOUR_PROJECT_FOLDER_NAME/
 	VUE_BASE_URL = /YOUR_PROJECT_FOLDER_NAME/
 
