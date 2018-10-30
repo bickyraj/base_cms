@@ -22,7 +22,7 @@ This is a base cms setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 
 ## Setup process
 ```
-	git clone https://github.com/bickyraj/base_crm.git
+	git clone https://github.com/bickyraj/base_cms.git
 ```
 ```
 	composer update
@@ -51,7 +51,7 @@ This is a base cms setup with OAuth 2 authentication in vue.js and Laravel 5.5.
 	php artisan passport:install
 	php artisan db:seed
 	php artisan migrate --database=testing
-	
+
 </ul>
 
 now go to browser and enter your url, the project is ready.
