@@ -67,19 +67,6 @@
       }
     },
     created() {
-      // let socket = io(`http://localhost:3000`);
-
-      // socket.on('connect', function() {
-      //   if (socket.connect) {
-      //     console.log('connected bro');
-      //   }
-      // });
-      this.fetchRoles();
-      // socket.on("test-channel:App\\Events\\TestNotification", function(message){
-      //     // increase the power everytime we load test route
-      //     // alert(parseInt(message.data.power))
-      //     console.log(message.data.users);
-      // });
     },
     computed: {
       // edit_option_for_parent_role: function (roleOptionId, parentId, roleId) {
@@ -87,64 +74,26 @@
       // }
     },
     methods: {
-      info(item, index, button) {
-        let self = this;
-        axios.get('../api/admin/role/' + item.id).then(function(response) {
-            if (response.status === 200 || response.status === 201) {
-              self.modalInfo.row = index
-              self.modalInfo.title = `Edit Role`
-              self.modalInfo.data = response.data.data
-              self.modalInfo.content = JSON.stringify(response.data.data, null, 2)
-              self.$root.$emit('bv::show::modal', 'modalInfo', button)
-            }
-          })
-          .catch(function(error) {
-            self.$toastr.e('Something went wrong please try again.');
-          });
-      },
       resetModal() {
         this.modalInfo.title = 'Edit Role'
         this.modalInfo.content = ''
-      },
-      editRole: function() {
-        var self = this;
-        var form = self.$refs.editRoleForm;
-        var row_index = form.getAttribute('row');
-        var formData = new FormData(form);
-        axios.post('../api/admin/edit-role', formData).then(function(response) {
-            if (response.status === 200) {
-              var role = response.data.data;
-              self.table_items[row_index].name = role.name;
-              self.hideRoleModal();
-              self.$swal({
-                // position: 'top-end',
-                type: 'success',
-                title: 'Role updated successfully.',
-                showConfirmButton: true,
-                // timer: 1500,
-                customClass: 'crm-swal',
-                confirmButtonText: 'Thanks',
-              })
-            }
-          })
-          .catch(function(error) {});
       },
       exportTable: function(type) {
       	let self = this
         let url = self.$root.baseUrl + '/admin/export-table/' + type;
 
         var win = window.open(url, '_blank');
-		win.focus();
+        win.focus();
 
-		self.$swal({
-		  // position: 'top-end',
-		  type: 'success',
-		  title: 'Exported updated successfully.',
-		  showConfirmButton: true,
-		  // timer: 1500,
-		  customClass: 'crm-swal',
-		  confirmButtonText: 'Thanks',
-		})
+        self.$swal({
+        // position: 'top-end',
+        type: 'success',
+        title: 'Exported updated successfully.',
+        showConfirmButton: true,
+        // timer: 1500,
+        customClass: 'crm-swal',
+        confirmButtonText: 'Thanks',
+      })
 
       	// axios.post(url, {type: type}).then(function(response) {
        //      if (response.status === 200) {

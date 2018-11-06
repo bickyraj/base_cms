@@ -101,6 +101,25 @@ const routes = [
         },
     },
     { 
+        path: admin_url + 'invoice', 
+        component: require('./components/Admin/Invoice/Index'),
+        meta: {
+            layout: 'admin',
+            breadcrumb: [
+                {
+                    name: 'Home',
+                    path: admin_url, 
+                },
+                {
+                    name: 'Invoice',
+                    path: admin_url + 'import-export', 
+                }
+            ],
+            middlewareAuth: true,
+            roleId: 1
+        },
+    },
+    { 
         path: admin_url +'change-password', 
         component: require('./components/Admin/Auth/ChangePassword'),
         name: 'admin-change-password',

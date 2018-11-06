@@ -55,8 +55,8 @@
 		    </div>
 		    <div class="login-page-right-container">
 		    	<div class="login-app-logo animated fadeInRight">
-			        <div class="login-page-title">CRM</div>
-			        <small>Basic Crm Using Vue.js</small>
+			        <div class="login-page-title">CMS</div>
+			        <small>Basic CMS Using Vue.js</small>
 		    	</div>
 		    </div>
 		</div>

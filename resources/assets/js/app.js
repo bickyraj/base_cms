@@ -68,7 +68,17 @@ const router = new VueRouter({
   	routes
 });
 
-// Vue.use(Vuex)
+Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
 
 // const store = new Vuex.Store({
 //   state: {
@@ -172,7 +182,7 @@ window.Event = new Vue;
 const app = new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   template: '<App/>',
   data: {
   	baseUrl: window.laravel.baseUrl,

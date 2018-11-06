@@ -29,6 +29,15 @@ export default {
         // text: 'NEW'
       }
     },
+    {
+      name: 'Invoice',
+      url: url + 'invoice',
+      icon: 'fas fa-file-alt',
+      badge: {
+        variant: 'primary',
+        // text: 'NEW'
+      }
+    },
     // {
     //   name: 'Url Shortner',
     //   url: url + 'url-shortner',
