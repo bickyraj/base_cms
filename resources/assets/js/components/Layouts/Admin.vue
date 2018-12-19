@@ -47,6 +47,8 @@
       }
     },
     mounted() {
+      this.$store.dispatch('increment');
+      console.log(this.$store.state.count);
       Event.$on('userLoggedIn', () => {
         this.authenticated = true;
         this.user = auth.user;

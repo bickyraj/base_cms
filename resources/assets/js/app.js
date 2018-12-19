@@ -77,6 +77,11 @@ const store = new Vuex.Store({
     increment (state) {
       state.count++
     }
+  },
+  actions: {
+    increment(context) {
+      context.commit('increment')
+    }
   }
 })
 
